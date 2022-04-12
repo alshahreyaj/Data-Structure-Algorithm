@@ -111,5 +111,5 @@ int main()
 	string s;
 	cin >> s;
 	kmp(s);
-	for(int i = 0; i < sz(s); i++) cout << pr[i] << " ";
+	for(int i = 0; i < s.size(); i++) cout << pr[i] << " ";
 }
