@@ -1,0 +1,33 @@
+#include<bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+typedef vector<vector<ll> > matrix;
+#define MOD 1000000007
+ 
+long long n,m;
+
+//Matrix Multiplication
+matrix mul(matrix A, matrix B)
+{
+    matrix C(m+5, vector<ll>(m+5));
+    for(int i=1;i<=m;i++) for(int j=1;j<=m;j++) for(int k=1;k<=m;k++)
+    C[i][j] = (C[i][j] + A[i][k] * B[k][j]) % MOD;
+    return C;
+}
+ 
+ 
+matrix pow(matrix A, long long p)
+{
+    if (p == 1)
+        return A;
+    if (p % 2)
+        return mul(A, pow(A, p-1));
+    matrix X = pow(A, p/2);
+    return mul(X, X);
+}
+ 
+ 
+int main()
+{
+   //Code Here
+}
