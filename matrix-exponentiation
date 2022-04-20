@@ -9,7 +9,7 @@ long long n,m;
 //Matrix Multiplication
 matrix mul(matrix A, matrix B)
 {
-    int m = sz(A);
+    int m = A.size();
     matrix C(m, vector<ll>(m));
     for(int i = 0; i < m; i++) for(int j = 0; j < m; j++) for(int k = 0; k < m; k++)
     C[i][j] = (C[i][j] + A[i][k] * B[k][j]);
